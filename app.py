@@ -324,7 +324,9 @@ def face_detect():
 def non_face_detect():
 
     # Initialize the webcam
-    cap = cv2.VideoCapture(0) 
+
+    cam_add = 'rtsp://admin:pilot2214@192.168.50.14:554/Streaming/channels/1/'
+    cap = cv2.VideoCapture(cam_add) 
 
     # save_path = 'frames/'
 
@@ -343,7 +345,7 @@ def non_face_detect():
     print('height:', height, 'px')
     print('total_fps:', total_fps, 'fps')
 
-    for idx,frame in enumerate(frame_extract(0)):
+    for idx,frame in enumerate(frame_extract(cam_add)):
         if(idx % 5 == 0):
             queue = [t for t in queue if t.is_alive()]
             if len(queue) < 3:
