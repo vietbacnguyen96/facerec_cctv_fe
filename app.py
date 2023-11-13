@@ -344,9 +344,10 @@ def non_face_detect():
     print('width:', width, 'px')
     print('height:', height, 'px')
     print('total_fps:', total_fps, 'fps')
-
+    index_frame = 0
     for idx,frame in enumerate(frame_extract(cam_add)):
-        if(idx % 5 == 0):
+        index_frame += 1
+        if(index_frame % 5 == 0):
             queue = [t for t in queue if t.is_alive()]
             if len(queue) < 3:
                 queue.append(threading.Thread(target=face_recognize, args=(frame, frame,)))
@@ -365,7 +366,7 @@ def non_face_detect():
             # # Exit the loop if the user presses the 'q' key
             # if cv2.waitKey(1) & 0xFF == ord('q'):
             #     break
-
+            index_frame = 0
 
             # Convert the frame to a jpeg image
             ret, jpeg = cv2.imencode('.jpg', frame)
