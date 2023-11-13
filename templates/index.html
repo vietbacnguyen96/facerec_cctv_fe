@@ -1,0 +1,60 @@
+<html>
+  <head>
+    <title>Quản lý điểm danh VKIST</title>
+    <link rel="icon" type="image/icon" href="static/img/icon.png">
+    <link rel="stylesheet" href="static/css/style.css">
+    <script src="/static/js/moment.min.js"></script>
+  </head>
+  <body>
+    <div class="container">
+      <div class="container1">
+        <!-- <img class="video" src="{{ url_for('video_feed_0') }}"> -->
+        <img class="video" src="{{ url_for('non_face_detect_0') }}">
+      </div>
+      <div class="container2">
+        <div class="data">
+          <div class="tab-name">Ảnh tức thời</div>
+          <div class="tab-name">Ảnh hồ sơ</div>
+          <!-- <div class="tab-name">Ảnh giáo viên/ phụ huynh</div> -->
+        </div>
+      </div>
+      <div class="container3" >
+      </div>
+    </div>
+    <script>
+      var person_I = (id, student_name, image_base64_0, image_base64_1, timestamp) => `
+
+      <div class="data">
+          <div class="column">
+            <div class="sub_column">
+              <img class="fixed-size-image" src="${image_base64_0}"> 
+              <div> ${moment(timestamp, "x").format("hh:mm:ss DD/MM/YYYY ")}</div>
+            </div>
+            <div class="sub_column"> 
+              <img class="fixed-size-image" src="${image_base64_1}"> 
+              <div>${student_name}</div>
+            </div>
+          </div>
+        </div>
+    `
+      function refreshFileList() {
+        fetch('/data')
+          .then(response => response.json())
+          .then(data => {
+            const result_block = document.getElementsByClassName("container3")[0];
+            result_block.innerHTML = "";
+            for (const person of data.info) {
+              if (person[0] == null){person[1] = 'Unknown'}
+              if (person[1] == null){person[1] = 'Unknown'}
+              if (person[2] == null){person[2] = 'static/img/unknown_1.jpg'}
+              if (person[3] == null){person[3] = 'static/img/unknown_1.jpg'}
+              if (person[4] == null){person[4] = 0}
+              result_block.innerHTML += person_I(person[0], person[1], person[2], person[3], person[4])
+            }
+          });
+      }
+      refreshFileList();
+      setInterval(refreshFileList, 2000);
+    </script>
+  </body>
+</html>
