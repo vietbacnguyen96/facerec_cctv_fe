@@ -229,10 +229,10 @@ def face_detect():
     # Initialize the webcam
     cap = cv2.VideoCapture(0) 
 
-    save_path = 'frames/'
+    # save_path = 'frames/'
 
-    if not os.path.exists(save_path):
-        os.makedirs(save_path)
+    # if not os.path.exists(save_path):
+    #     os.makedirs(save_path)
 
     prev_frame_time = 0
     new_frame_time = 0
@@ -326,10 +326,10 @@ def non_face_detect():
     # Initialize the webcam
     cap = cv2.VideoCapture(0) 
 
-    save_path = 'frames/'
+    # save_path = 'frames/'
 
-    if not os.path.exists(save_path):
-        os.makedirs(save_path)
+    # if not os.path.exists(save_path):
+    #     os.makedirs(save_path)
 
     prev_frame_time = 0
     new_frame_time = 0
