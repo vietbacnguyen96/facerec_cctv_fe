@@ -60,10 +60,10 @@ predict_labels = []
 
 url = 'https://dohubapps.com/user/langiocn/5000/facerecog'
 
-save_path = 'detected_faces/'
+# save_path = 'detected_faces/'
 
-if not os.path.exists(save_path):
-    os.makedirs(save_path)
+# if not os.path.exists(save_path):
+#     os.makedirs(save_path)
 
 
 def check_keys(model, pretrained_state_dict):
