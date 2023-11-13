@@ -28,13 +28,15 @@ from utils.functions import *
 
 app = Flask(__name__)
 
+path = "/home/xavier01/facerec_cctv_fe/"
+# path = "./"
 
-fa = CoordinateAlignmentModel("utils/service/weights/coor_2d106.tflite")
+fa = CoordinateAlignmentModel(path + "utils/service/weights/coor_2d106.tflite")
 
 
 parser = argparse.ArgumentParser(description='Retinaface')
 
-parser.add_argument('-m', '--trained_model', default='./weights/mobilenet0.25_Final.pth',
+parser.add_argument('-m', '--trained_model', default= path + 'weights/mobilenet0.25_Final.pth',
                     type=str, help='Trained state_dict file path to open')
 parser.add_argument('--network', default='mobile0.25',
                     help='Backbone network mobile0.25 or resnet50')
