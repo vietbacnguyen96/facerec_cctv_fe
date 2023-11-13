@@ -3,7 +3,7 @@
     margin: 0;
 }
 .container{
-    border: 1px solid green;
+    /* border: 1px solid green; */
     /* max-width: 1224px; */
     width: 90%;
     margin: auto;
@@ -12,7 +12,7 @@
 }
 
 .container1{
-    border: 1px solid red;
+    /* border: 1px solid red; */
 
     /* max-width: 1224px; */
     width: 90%;
@@ -31,7 +31,7 @@
     /* text-align: center; */
 }
 .container3{
-    border: 1px solid rgb(0, 255, 42);
+    /* border: 1px solid rgb(0, 255, 42); */
     /* max-width: 1224px; */
     width: 90%;
     height: 50%;
@@ -41,7 +41,7 @@
 }
 
 .video{
-    border: 1px solid rgb(202, 243, 19);
+    /* border: 1px solid rgb(202, 243, 19); */
     /* max-width: 1224px; */
     /* width: 50%; */
     height: 100%;
@@ -55,7 +55,7 @@
     gap: 5px;
 }
 .tab-name{
-    border: 2px solid rgba(0, 25, 245, 0.634);
+    /* border: 2px solid rgba(0, 25, 245, 0.634); */
     width: 30%;
     /* height: 90%; */
     /* height: 40px; */
@@ -69,7 +69,7 @@
 
 }
 .column{
-    border: 2px solid black;
+    /* border: 2px solid black; */
     width: 100%;
     /* height: 50px; */
     /* padding: 10px 0; */
@@ -79,7 +79,7 @@
 
 }
 .sub_column{
-    border: 2px solid rgb(255, 0, 0);
+    /* border: 2px solid rgb(255, 0, 0); */
     width: 30%;
     /* height: 50px; */
     /* padding: 10px 0; */
@@ -90,7 +90,7 @@
     font-weight: bold;
 }
 .photo {
-    border: 2px solid rgb(15, 7, 239);
+    /* border: 2px solid rgb(15, 7, 239); */
     padding: 0px 0;
     text-align: center;
 }
